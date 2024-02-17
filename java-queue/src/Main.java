@@ -2,7 +2,7 @@ public class Main {
   /*add your code here*/
   public static void main(String[] args) {
 
-      QueueArray que = new QueueArray();
+      QueueArray que = new QueueArray(3);
 
       que.enqueue(100);
       que.enqueue(101);
@@ -11,5 +11,6 @@ public class Main {
       que.dequeue();
 
       que.display();
+      
     }
 }
