@@ -5,14 +5,12 @@
 In this project, we will cover the fundamentals of the queue.
 
 ### Problem
-Store invoice numbers of orders using a queue.
+Store invoice numbers of orders using a queue array.
 
 ### Implementation
 
-Implement **enqueue, dequeue, and display** methods.
-
-> The **display()** method should print out all the element in the queue
-> 
+Implement **QueueArray constructor, enqueue, and dequeue** methods.
+ 
 > Run the main method to verify the implementation.
 
 ````Java
@@ -31,6 +29,12 @@ public class Main {
     }
 }
 ````
+**OUTPUT**
+````
+101
+102
+````
+
 
 > * Once you complete this project, Create an issue with the title "Completed [your-username]".
-> * Create an issue of your questions, If you face any trouble solving the project.
+> * Please create an issue of your questions, If you have any trouble solving the project.
