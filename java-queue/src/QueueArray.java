@@ -1,55 +1,45 @@
-public class QueueArray {
+public class Queue {
 
-    // queue array
-    int array[];
-    // front
-    int front;
-    // rear
-    int rear;
-    // size
-    int size;
+    // Attributes
+    Node front;
+    Node rear;
 
-    // Initialize default values & array
-    QueueArray(int size) {
-        // update size
-        this.size = size;
-        // front default value -1
+    // Constructor
+    public Queue() {
+        this.front = null;
+        this.rear = null;
+    }
 
-        // rear default value -1
+    // enqueue
+    public void enqueue(int newData) {
+        Node newNode = new Node(newData);
+        if (rear != null){
+            rear.next = newNode;
+        }
+        rear = newNode;
+        if (front == null){
+            front = rear;
+        }
 
-        // intialize array
+    }
+    // dequeue
+    public void dequeue() {
+        if(front == null){
+            System.out.println("queue is empty");
+            return;
+        } 
+        int data = front.data;
+        front = front.next;
+        System.out.println(data);
         
     }
-
-    public boolean isEmpty() {
-        // return True if array is Empty
-
-    }
-
-    public boolean isFull() {
-        // return True if array is Full
-
-    }
-
-    public void enqueue(int element) {
-        // add new element at the rear
-
-    }
-
-    public void dequeue() {
-        // remove element at the front
-
-    }
-
+    // display
     public void display() {
-        // temporary variable to print queue from front to rear
-        int temp = front;
-        for(int i = temp; i <= rear; i++) {
-
-            System.out.println(array[i]);
+        Node x = front;
+        while (x != null) {
+            System.out.println(x.data);
+            x = x.next; 
         }
+
     }
-
-
-
 }
