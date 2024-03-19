@@ -14,30 +14,55 @@ public class QueueArray {
         // update size
         this.size = size;
         // front default value -1
+        this.front = -1;
+        this.rear = -1;
 
         // rear default value -1
 
         // intialize array
-        
+        this.array = new int[size];
     }
 
     public boolean isEmpty() {
-        // return True if array is Empty
+        if(this.front == -1 && this.rear == -1){
+            return true;
+        }else{
+            return false;
+        }
 
     }
 
     public boolean isFull() {
-        // return True if array is Full
+        if(this.array.length-1 == this.size){
+            return true; 
+        }
+        return false;
 
     }
 
     public void enqueue(int element) {
-        // add new element at the rear
+         if(isFull()){
+            System.out.println("Array is full");
+            return;
+         }else if(isEmpty()){
+            this.front = 0;
+            this.rear = 0;
+         }else{
+        this.rear +=1;
+         }
+         this.array[this.rear] = element;
 
     }
 
     public void dequeue() {
-        // remove element at the front
+        if(isEmpty()){
+            System.out.println("there ia no object to delete");
+        }else if (front == rear){
+           front = rear = -1;
+
+        }else{
+            this.front ++;
+        }
 
     }
 
