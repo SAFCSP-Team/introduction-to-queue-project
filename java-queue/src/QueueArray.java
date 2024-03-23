@@ -1,44 +1,42 @@
-public class QueueArray {
-
-    // queue array
-    int array[];
-    // front
+public class queueArray {
+    int [] queue;
     int front;
-    // rear
     int rear;
-    // size
     int size;
 
-    // Initialize default values & array
-    QueueArray(int size) {
-        // update size
+    public queueArray(int size){
+        queue = new int[size];
         this.size = size;
-        // front default value -1
+        front = -1;
+        rear = -1;
+    }
 
-        // rear default value -1
+    public void enqueue(int item){
+        //if queue is full
+        if (rear == size -1) {
+            System.out.println("queue is full");
+            return;
+        }
+        //if Q is empty
+        if (front == -1 && rear == -1) {
+            front = 0;
+            rear = 0;
+        }else{
+            rear++;
+        } 
+        queue[rear] = item;
+    }
+    public void dequeue(){
+        if(front == -1 && rear == -1){
+            System.out.println("empty");
 
-        // intialize array
+        }else if(front == 0 && rear == 0){
+            rear = -1;
+            front = -1;
+        }else{
+            front++;
+        }
         
-    }
-
-    public boolean isEmpty() {
-        // return True if array is Empty
-
-    }
-
-    public boolean isFull() {
-        // return True if array is Full
-
-    }
-
-    public void enqueue(int element) {
-        // add new element at the rear
-
-    }
-
-    public void dequeue() {
-        // remove element at the front
-
     }
 
     public void display() {
@@ -46,10 +44,8 @@ public class QueueArray {
         int temp = front;
         for(int i = temp; i <= rear; i++) {
 
-            System.out.println(array[i]);
+            System.out.println(queue[i]);
         }
     }
-
-
-
+    
 }
